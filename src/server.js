@@ -1,3 +1,4 @@
+require('./database');
 const Express = require("express");
 const routes = require("./routes");
 
