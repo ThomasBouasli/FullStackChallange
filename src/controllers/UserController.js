@@ -4,25 +4,25 @@ class UserController {
   async create(req, res) {
     const { name, email, password } = req.body;
 
-    const {user, token} = await UserService.create(name, email, password);
+    const result = await UserService.create(name, email, password);
 
-    if (user instanceof Error) {
-      return res.status(400).json(user.message);
+    if (result instanceof Error) {
+      return res.status(400).json(result.message);
     }
 
-    return res.json({user, token});
+    return res.json(result);
   }
 
   async login(req, res) {
     const { email, password } = req.body;
 
-    const {user, token} = await UserService.login(email, password);
+    const result = await UserService.login(email, password);
 
-    if (user instanceof Error) {
-      return res.status(400).json(user.message);
+    if (result instanceof Error) {
+      return res.status(400).json(result.message);
     }
 
-    return res.json({user, token});
+    return res.json(result);
   }
 }
 
