@@ -21,7 +21,9 @@ class UserService {
 
     const user = await User.create({ name, email, password: hashedPassword });
 
-    return user;
+    const token = generateToken(user);
+
+    return {user, token};
   }
 
   async login(email, password) {
@@ -41,12 +43,16 @@ class UserService {
       return new Error("Invalid password");
     }
 
-    const token = jwt.sign({ id: user.id }, authConfig.secret, {
-        expiresIn: authConfig.expiresIn
-    });
+    const token = generateToken(user)
 
     return {user, token};
   }
+}
+
+function generateToken(user){
+  return jwt.sign({ id: user.id }, authConfig.secret, {
+    expiresIn: authConfig.expiresIn
+});
 }
 
 module.exports = new UserService();
