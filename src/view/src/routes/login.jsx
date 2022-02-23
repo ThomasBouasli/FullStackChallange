@@ -2,6 +2,8 @@ import { TextField, Box, Button, FormControl } from "@mui/material";
 import Page from "../components/Page";
 import useAuth from "../hooks/useAuth";
 
+import { Link } from "react-router-dom";
+
 
 export default function LogIn() {
 
@@ -68,9 +70,19 @@ export default function LogIn() {
           color="success"
           variant="contained"
           type="submit"
-          sx={{ marginTop: "10rem" }}
+          sx={{ marginTop: "8rem" }}
         >
           Submit
+        </Button>
+        <Button
+          color="warning"
+          variant="contained"
+          type="submit"
+          sx={{ marginY: "2rem" }}
+          component={Link}
+          to="/"
+        >
+          Back
         </Button>
       </form>
     </Page>
