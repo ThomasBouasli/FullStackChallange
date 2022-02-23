@@ -56,7 +56,7 @@ export default function SignIn() {
           label="Name"
           variant="outlined"
           type="text"
-          sx={{ margin: "1rem" }}
+          sx={{ margin: "1rem", width: "100%"}}
         />
         <TextField
           name="email"
@@ -64,7 +64,7 @@ export default function SignIn() {
           label="Email"
           variant="outlined"
           type="email"
-          sx={{ margin: "1rem" }}
+          sx={{ margin: "1rem", width: "100%"}}
         />
         <TextField
           name="password"
@@ -72,7 +72,7 @@ export default function SignIn() {
           label="Password"
           variant="outlined"
           type="password"
-          sx={{ margin: "1rem" }}
+          sx={{ margin: "1rem", width: "100%"}}
         />
         {loginError ? <Alert severity="error">{loginError}</Alert> : null}
         <Button

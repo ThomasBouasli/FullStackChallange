@@ -1,8 +1,8 @@
-import { Box } from "@mui/system";
+import { Container } from "@mui/material";
 
 export default function Page(props) {
   return (
-    <Box
+    <Container
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -14,9 +14,12 @@ export default function Page(props) {
         backgroundRepeat: "no-repeat",
         backgroundSize: "50%",
         backgroundPosition: props.position,
+        backgroundOrigin: "padding-box",
       }}
+
+      maxWidth="xl"
     >
       {props.children}
-    </Box>
+    </Container>
   );
 }

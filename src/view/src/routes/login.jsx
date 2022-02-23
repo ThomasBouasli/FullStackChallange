@@ -58,7 +58,7 @@ export default function LogIn() {
           label="Email"
           variant="outlined"
           type="email"
-          sx={{ margin: "1rem" }}
+          sx={{ margin: "1rem", width: "100%" }}
         />
         <TextField
           name="password"
@@ -66,7 +66,7 @@ export default function LogIn() {
           label="Password"
           variant="outlined"
           type="password"
-          sx={{ margin: "1rem" }}
+          sx={{ margin: "1rem" , width: "100%"}}
         />
         {
           loginError ? <Alert severity="error">{loginError}</Alert> : null
@@ -75,7 +75,7 @@ export default function LogIn() {
           color="success"
           variant="contained"
           type="submit"
-          sx={{ marginTop: "8rem" }}
+          sx={{ marginTop: "3rem" }}
         >
           Submit
         </Button>
