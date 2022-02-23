@@ -1,11 +1,13 @@
-import { TextField, Box, Button, FormControl } from "@mui/material";
+import { TextField, Box, Button, Alert } from "@mui/material";
 import Page from "../components/Page";
 import useAuth from "../hooks/useAuth";
+
+import { useState } from "react";
 
 import { Link } from "react-router-dom";
 
 export default function SignIn() {
-
+  const [loginError, setLoginError] = useState(null);
   useAuth();
 
   async function handleSubmit(event) {
@@ -29,13 +31,11 @@ export default function SignIn() {
 
     const data = await result.json();
 
-    if (data.error) {
-      alert(data.error);
-    }
-
     if (data.token) {
       localStorage.setItem("token", data.token);
       window.location = "/";
+    } else {
+      setLoginError(data);
     }
   }
 
@@ -74,6 +74,7 @@ export default function SignIn() {
           type="password"
           sx={{ margin: "1rem" }}
         />
+        {loginError ? <Alert severity="error">{loginError}</Alert> : null}
         <Button
           color="success"
           variant="contained"

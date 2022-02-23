@@ -1,11 +1,14 @@
-import { TextField, Box, Button, FormControl } from "@mui/material";
+import { TextField, Box, Button, Alert } from "@mui/material";
 import Page from "../components/Page";
 import useAuth from "../hooks/useAuth";
+import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 
 
 export default function LogIn() {
+
+  const [loginError , setLoginError] = useState(null);
 
   useAuth();
 
@@ -28,13 +31,12 @@ export default function LogIn() {
 
     const data = await result.json();
 
-    if (data.error) {
-      alert(data.error);
-    }
 
     if (data.token) {
       localStorage.setItem("token", data.token);
       window.location = "/";
+    }else{
+      setLoginError(data);
     }
 
   }
@@ -66,6 +68,9 @@ export default function LogIn() {
           type="password"
           sx={{ margin: "1rem" }}
         />
+        {
+          loginError ? <Alert severity="error">{loginError}</Alert> : null
+        }
         <Button
           color="success"
           variant="contained"
