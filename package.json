@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "nodemon src/server.js",
-    "build": "npm --prefix ./src/view run build",
+    "build": "npm --prefix ./src/view install && npm --prefix ./src/view run build",
     "start": "node src/server.js",
     "deploy": "npm run build && npm run start"
   },
