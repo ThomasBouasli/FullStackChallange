@@ -8,7 +8,15 @@ body {
 h1 {
   font-family: "Dosis", sans-serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 64px;
+  margin: 10px
+}
+
+
+@media screen and (min-width: 600px) {
+  h1 {
+    font-size: 96px;
+  }
 }
 
 /* width */

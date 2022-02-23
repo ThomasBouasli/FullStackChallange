@@ -20,7 +20,7 @@ export default function LandingPage() {
         }}
       >
         <Button
-          sx={{ paddingX: "3rem", marginY: "1rem" }}
+          sx={{ paddingX: "3rem", marginY: "1rem", backgroundColor: "#D5A150" }}
           size="large"
           variant="contained"
           color="primary"
@@ -30,10 +30,9 @@ export default function LandingPage() {
           Log In
         </Button>
         <Button
-          sx={{ paddingX: "3rem", marginY: "1rem" }}
+          sx={{ paddingX: "3rem", marginY: "1rem", backgroundColor: "#BF8A4C" }}
           size="large"
           variant="contained"
-          color="secondary"
           component={Link}
           to="/signin"
         >

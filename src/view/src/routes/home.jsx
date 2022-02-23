@@ -58,7 +58,7 @@ export default function Home() {
       )}
       </Box>
       <Button
-        sx={{ paddingX: "3rem", marginY: "1rem" }}
+        sx={{ paddingX: "3rem", marginY: "1rem", backgroundColor: "#D5A150" }}
         size="large"S
         variant="contained"
         color="warning"

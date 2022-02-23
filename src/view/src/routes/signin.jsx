@@ -41,7 +41,7 @@ export default function SignIn() {
 
   return (
     <Page position="-60% 80%">
-      <h1 style={{ fontSize: "3rem" }}>Sign In</h1>
+      <h1>Sign In</h1>
       <form
         style={{
           display: "flex",
@@ -82,7 +82,7 @@ export default function SignIn() {
           color="success"
           variant="contained"
           type="submit"
-          sx={{ marginTop: "2rem" }}
+          sx={{ marginTop: "2rem" , backgroundColor: "#D5A150"}}
         >
           Submit
         </Button>
@@ -90,7 +90,7 @@ export default function SignIn() {
           color="warning"
           variant="contained"
           type="submit"
-          sx={{ marginY: "2rem" }}
+          sx={{ marginY: "2rem", backgroundColor: "#BF8A4C"}}
           component={Link}
           to="/"
         >
