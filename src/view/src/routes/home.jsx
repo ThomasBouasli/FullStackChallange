@@ -6,31 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, Box } from "@mui/material";
 
 export default function Home() {
-  const [cookies, setCookies] = useState([
-    {
-      image: "https://i.ibb.co/gDyMJ13/541732.png",
-      name: "Chocolate Chip",
-    },
-    {
-      image: "https://i.ibb.co/gDyMJ13/541732.png",
-      name: "Chocolate Chip",
-    },
-    {
-      image: "https://i.ibb.co/gDyMJ13/541732.png",
-      name: "Chocolate Chip",
-    },    {
-      image: "https://i.ibb.co/gDyMJ13/541732.png",
-      name: "Chocolate Chip",
-    }
-    ,    {
-      image: "https://i.ibb.co/gDyMJ13/541732.png",
-      name: "Chocolate Chip",
-    },    {
-      image: "https://i.ibb.co/gDyMJ13/541732.png",
-      name: "Chocolate Chip",
-    }
-
-  ]);
+  const [cookies, setCookies] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -60,7 +36,7 @@ export default function Home() {
     <Page position="150% -10%">
       <h1>Cookies</h1>
       <Box sx={{
-        overflowY: "scroll",
+        overflowY: "auto",
         padding: "0px 5%",
         boxSizing: "border-box",
       }}>
@@ -106,7 +82,7 @@ function Cookie({ imgSrc, name }) {
         boxShadow: "4px 4px 0px #000000",
         padding: "0.5rem 2rem",
         borderRadius: "0.5rem",
-        margin: "1rem",
+        margin: "2rem 0px",
       }}
     >
       <img
