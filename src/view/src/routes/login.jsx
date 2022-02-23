@@ -58,6 +58,7 @@ export default function LogIn() {
           label="Email"
           variant="outlined"
           type="email"
+          required
           sx={{ margin: "1rem", width: "100%" }}
         />
         <TextField
@@ -66,6 +67,7 @@ export default function LogIn() {
           label="Password"
           variant="outlined"
           type="password"
+          required
           sx={{ margin: "1rem" , width: "100%"}}
         />
         {
