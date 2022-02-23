@@ -5,6 +5,9 @@
   "repository": "https://github.com/ThomasBouasli/desafio-fullstack-nex.git",
   "author": "Thomas Bouasli <thomas.bouasli@gmail.com>",
   "license": "MIT",
+  "engines": {
+    "node": "17.5"
+  },
   "scripts": {
     "dev": "nodemon src/server.js",
     "build": "npm --prefix ./src/view run build",
