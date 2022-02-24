@@ -10,6 +10,12 @@
 - react-router-dom
 - express
 - bcrypt
+
+
+### Sobre a Solução
+
+Para contextualizar, esse aplicativo foi construido com técnologias que eu nunca havia utilizado antes, no backend passei muito tempo tentando utilizar o TypeScript com o Sequelize para descobrir que muitas partes desse ORM não aceita o uso do TypeScript. Indo para o Frontend, criei o design no Figma, e tentei utilizar uma biblioteca de componentes para agilizar o desenvolvimento, porém nunca tinha utilizado ela, e apenas no final do desenvolvimento descobri funcionalidades extremamente uteis. Esse não é o meu melhor trabalho, mas foi uma ótima oportunidade para aprender!
+
 ## Documentação da API
 
 ### Create a User
