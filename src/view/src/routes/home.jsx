@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import Page from "../components/Page";
-
-import useMediaQuery from "@mui/material/useMediaQuery";
-
 import { TailSpin } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
-import { Button, Box } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
+import { HandledButton } from "../components/Buttons";
 
 export default function Home() {
   const [cookies, setCookies] = useState(null);
@@ -19,7 +17,7 @@ export default function Home() {
       const result = await fetch("/api/products", {
         method: "GET",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
@@ -33,7 +31,7 @@ export default function Home() {
         setCookies(data);
       }
     }
-  }, []);
+  }, [navigate]);
 
   return (
     <Page position="150% -10%">
@@ -59,22 +57,24 @@ export default function Home() {
           </div>
         ) : (
           cookies.map((cookie) => (
-            <Cookie key={cookie.id} imgSrc={cookie.image} name={cookie.name} price={cookie.price} />
+            <Cookie
+              key={cookie.id}
+              imgSrc={cookie.image}
+              name={cookie.name}
+              price={cookie.price}
+            />
           ))
         )}
       </Box>
-      <Button
-        sx={{ paddingX: "3rem", marginY: "1rem", backgroundColor: "#D5A150" }}
-        size="large"
-        variant="contained"
-        color="warning"
+      <HandledButton
+        type="primary"
         onClick={() => {
           localStorage.removeItem("token");
           navigate("/");
         }}
       >
         Log Out
-      </Button>
+      </HandledButton>
     </Page>
   );
 }
@@ -84,7 +84,7 @@ function Cookie({ imgSrc, name, price, id }) {
 
   return (
     <div
-    key={id}
+      key={id}
       style={{
         display: "flex",
         alignItems: "center",
@@ -102,9 +102,7 @@ function Cookie({ imgSrc, name, price, id }) {
         style={{ height: "40px", marginRight: "1rem" }}
       />
       <span>{name}</span>
-      {
-        isMobile ? null : <span>{price}</span>
-      }
+      {isMobile ? null : <span>{price}</span>}
     </div>
   );
 }

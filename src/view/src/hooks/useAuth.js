@@ -12,5 +12,5 @@ export default function useAuth() {
     if (token) {
       navigate("/home");
     }
-  }, token);
+  }, [token, navigate]);
 }

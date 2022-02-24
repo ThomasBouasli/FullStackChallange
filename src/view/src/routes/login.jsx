@@ -1,9 +1,10 @@
-import { TextField, Box, Button, Alert } from "@mui/material";
+import { TextField, Alert } from "@mui/material";
 import Page from "../components/Page";
 import useAuth from "../hooks/useAuth";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-import { Link } from "react-router-dom";
+import { Button, SubmitButton } from "../components/Buttons";
+
 
 
 export default function LogIn() {
@@ -73,24 +74,9 @@ export default function LogIn() {
         {
           loginError ? <Alert severity="error">{loginError}</Alert> : null
         }
-        <Button
-          color="success"
-          variant="contained"
-          type="submit"
-          sx={{ marginTop: "3rem" , backgroundColor: "#D5A150"}}
-        >
-          Submit
-        </Button>
-        <Button
-          color="warning"
-          variant="contained"
-          type="submit"
-          sx={{ marginY: "2rem", backgroundColor: "#BF8A4C"}}
-          component={Link}
-          to="/"
-        >
-          Back
-        </Button>
+        <SubmitButton type="primary">Submit</SubmitButton>
+        <Button to="/" type="secondary">Back</Button>
+
       </form>
     </Page>
   );
