@@ -1,9 +1,127 @@
-## Desafio
-Você deverá desenvolver uma aplicação que consiste em: um banco de dados (PostgreSQL), uma API (Node.js + Sequelize.js) e o Front-end (React.js). 
 
-Na aplicação, um usuário deverá se cadastrar utilizando nome, e-mail e senha e se autenticar na 
-aplicação utilizando JWT. Já na home, o backend deve retornar para o usuário  uma lista de produtos que apenas um usuário autenticado pode acessar.
+# Nex Digital Desafio
 
-## Instalação
 
-Rode ```npm install```e ```yarn deploy``` e a aplicação irá rodar na porta 3000, com rotas da api em ```/api``` e a view na rota padrão.
+
+
+### Dependecias Adicionais
+
+- material-ui
+- react-router-dom
+- express
+- bcrypt
+## Documentação da API
+
+### Create a User
+
+```http
+  POST /api/users
+```
+
+#### Recives
+
+```json
+{
+    "name" : string,
+    "email" : string,
+    "password" : string
+}
+```
+
+
+#### Returns
+
+```json
+{
+    "user" : {
+        "id" : integer,
+        "name" : string,
+        "email" : string,
+        "password" : string,
+        "created_at" : Date,
+        "updated_at" : Date
+    },
+    "token" : String
+}
+```
+
+
+### Log in
+
+```http
+  POST /api/users/login
+```
+
+#### Recives
+
+```json
+{
+    "email" : string,
+    "password" : string
+}
+```
+
+
+#### Returns
+
+```json
+{
+    "user" : {
+        "id" : integer,
+        "name" : string,
+        "email" : string,
+        "password" : string,
+        "created_at" : Date,
+        "updated_at" : Date
+    },
+    "token" : String
+}
+```
+
+### Create Product
+```http
+  POST /api/products
+```
+
+#### Recives
+
+```json
+{
+    "name" : string,
+    "price" : float,
+    "image" : string
+}
+```
+
+
+#### Returns
+
+```json
+{
+    "id" : integer,
+    "name" : string,
+    "price" : float,
+    "image" : string,
+    "created_at" : Date,
+    "updated_at" : Date
+}
+```
+
+
+### Get all Product
+```http
+  GET /api/products
+```
+
+#### Returns
+
+```json
+{
+    "id" : integer,
+    "name" : string,
+    "price" : float,
+    "image" : string,
+    "created_at" : Date,
+    "updated_at" : Date
+}
+```
