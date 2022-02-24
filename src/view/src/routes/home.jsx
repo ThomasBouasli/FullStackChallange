@@ -8,20 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, Box } from "@mui/material";
 
 export default function Home() {
-  const [cookies, setCookies] = useState([
-    {
-      id: 1,
-      name: "Chocolate Chip",
-      image: "https://i.ibb.co/gDyMJ13/541732.png",
-      price: "$1.00",
-    },
-    {
-      id: 2,
-      name: "Chocolate Chip",
-      image: "https://i.ibb.co/gDyMJ13/541732.png",
-      price: "$1.00",
-    },
-  ]);
+  const [cookies, setCookies] = useState(null);
   const navigate = useNavigate();
   const isMobile = useMediaQuery("(max-width: 600px)");
 
